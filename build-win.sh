@@ -10,3 +10,6 @@ rm -f ./bin/double-tap.exe
 # Create new build and setup .app structure
 go build -o bin/double-tap.exe ./src
 
+# Patch exe with correct icon
+node ./rcedit.js
+

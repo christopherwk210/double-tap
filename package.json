@@ -1,0 +1,27 @@
+{
+  "name": "doubletap",
+  "version": "1.0.0",
+  "description": "A small development utility that helps minimize Electron build sizes.",
+  "scripts": {
+    "start": "bash ./dev.sh",
+    "build:win": "bash ./build-win.sh",
+    "build:mac": "bash ./build-mac.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherwk210/double-tap.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Topher Anselmo",
+    "email": "christopherwk210@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christopherwk210/double-tap/issues"
+  },
+  "homepage": "https://github.com/christopherwk210/double-tap#readme",
+  "dependencies": {
+    "rcedit": "^3.0.1"
+  }
+}
