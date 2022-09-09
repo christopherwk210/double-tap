@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"path/filepath"
 )
 
@@ -17,8 +18,10 @@ var tempPath string
 var buildsPath string
 
 func init() {
+	isDevelopment := os.Getenv("GO_APP_ENV") == "development"
+
 	os, arch := detectSystem()
-	targetConfig, executablePath, asarMode, packagePath = ensureValidProject()
+	targetConfig, executablePath, asarMode, packagePath = ensureValidProject(isDevelopment)
 	_, tempPath, buildsPath = ensureWorkingDirectory()
 
 	if targetConfig.Version == "" {

@@ -23,7 +23,7 @@ func exists(dir string) bool {
 	return err == nil
 }
 
-func ensureValidProject() (targetConfig TargetConfig, executablePath string, asarMode bool, packagePath string) {
+func ensureValidProject(devMode bool) (targetConfig TargetConfig, executablePath string, asarMode bool, packagePath string) {
 	platform, _ := detectSystem()
 
 	// Get binary path
@@ -32,10 +32,18 @@ func ensureValidProject() (targetConfig TargetConfig, executablePath string, asa
 		lprintPanic(err, "could not find executable directory")
 	}
 
-	if platform == "darwin" {
-		ex = filepath.Join(ex, "../../../../")
+	if devMode {
+		workingDirectory, err := os.Getwd()
+		if err != nil {
+			lprintPanic(err, "could not get working dev directory")
+		}
+		ex = filepath.Join(workingDirectory, "temp")
 	} else {
-		ex = filepath.Dir(ex)
+		if platform == "darwin" {
+			ex = filepath.Join(ex, "../../../../")
+		} else {
+			ex = filepath.Dir(ex)
+		}
 	}
 
 	resourcesPath := filepath.Join(ex, "resources")
