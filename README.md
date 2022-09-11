@@ -5,7 +5,7 @@ A small development utility that helps minimize Electron build sizes.
 
 ## Usage
 
-1. Download the approapriate version from the [releases page](https://github.com/christopherwk210/double-tap/releases), and put it in its own folder.
+1. Download the appropriate version from the [releases page](https://github.com/christopherwk210/double-tap/releases), and put it in its own folder.
 2. Create a `resources` folder next to it, and inside there place your application code (either an `app` folder or `app.asar`)
 3. Create a `target.json` in your `resources` folder, with an object that looks like this:
 
