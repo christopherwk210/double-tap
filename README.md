@@ -31,6 +31,10 @@ Your folder should look like this when it's all setup:
 
 You are free to rename the executable file to whatever you'd like.
 
+### Diagram
+
+![setup diagram](/resources/diagram.png)
+
 ## The problem
 Electron builds, as we all know, are large. A "hello world" app can be 70-100MB+ on its own. For production builds this isn't really avoidable, and that's fine for the most part. But for sharing development builds back and forth with your team, this can be troublesome. Especially when you're iterating often. Uploading huge zip files multiple times a day just so someone can review some minor changes is annoying and dumb. There are plenty of solutions one could probably come up with, but for my circumstance developing Double Tap made sense enough. Also it was fun to make.
 
